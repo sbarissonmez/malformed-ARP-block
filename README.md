@@ -5,9 +5,11 @@ Upon detection via deep packet inspection, the script creates a separate ARP acc
 
 Example:
 ARP access list copp-arp-quarantine
-    `30 permit ip any mac host 0000.0700.0702`
-    `10 permit ip any mac host 0000.0700.0700`
-    `20 permit ip any mac host 0000.0700.0701`
+<p>
+`30 permit ip any mac host 0000.0700.0702`
+`10 permit ip any mac host 0000.0700.0700`
+`20 permit ip any mac host 0000.0700.0701`
+</p>
 
 The script also checks for excessice ARP/GARP. Upon detection via deep packet inspection, the script creates a separate ARP access-list (throttle) with the offending mac addresses
 
