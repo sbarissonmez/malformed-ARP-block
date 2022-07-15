@@ -17,22 +17,19 @@ In case a standard CoPP is configured, a Custom profile will be configured based
 After this initial check, the script starts a packet capture, 1000 ARP packets (this can be tuned)
 Once the ARP packet capture is completed, the code look for malformed ARP
 The script then put the offending MACs into the Quarantine ARP access list
+
 Example:
 Malformed ARP detected for MAC 00:00:07:00:07:00
 Malformed ARP detected for MAC 00:00:07:00:07:01
 Malformed ARP detected for MAC 00:00:07:00:07:02
 
- --------------
-| APPLY Quarantine settings!
- --------------
+    APPLY Quarantine settings!
 
 If no malformed ARP are detected the following message is printed:
- --------------
-| NO Malformed ARP detected!
- --------------
+
+    NO Malformed ARP detected!
 
 In case of excessive ARP/GARP requests the throttle logic will be applied
-
 
 All the actions are logged into the syslog. Example:
 
