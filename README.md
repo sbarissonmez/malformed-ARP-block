@@ -5,9 +5,9 @@ Upon detection via deep packet inspection, the script creates a separate ARP acc
 
 Example:
 ARP access list copp-arp-quarantine
-10 permit ip any mac host 0000.0700.0700
-20 permit ip any mac host 0000.0700.0701
-30 permit ip any mac host 0000.0700.0702
+    10 permit ip any mac host 0000.0700.0700
+    20 permit ip any mac host 0000.0700.0701
+    30 permit ip any mac host 0000.0700.0702
 
 The script also checks for excessice ARP/GARP. Upon detection via deep packet inspection, the script creates a separate ARP access-list (throttle) with the offending mac addresses
 
@@ -19,9 +19,9 @@ Once the ARP packet capture is completed, the code look for malformed ARP
 The script then put the offending MACs into the Quarantine ARP access list
 
 Example:
-Malformed ARP detected for MAC 00:00:07:00:07:00
-Malformed ARP detected for MAC 00:00:07:00:07:01
-Malformed ARP detected for MAC 00:00:07:00:07:02
+    Malformed ARP detected for MAC 00:00:07:00:07:00
+    Malformed ARP detected for MAC 00:00:07:00:07:01
+    Malformed ARP detected for MAC 00:00:07:00:07:02
 
     APPLY Quarantine settings!
 
@@ -33,6 +33,6 @@ In case of excessive ARP/GARP requests the throttle logic will be applied
 
 All the actions are logged into the syslog. Example:
 
-ARP Python Script: Malformed ARP detected for MAC 00:00:07:00:07:00
-ARP Python Script: Throttle MAC address 00:00:07:00:07:00, Seen 304 times (27%) during capture
-ARP Python Script: Throttle GARP for IP address 10.10.10.2, Seen 202 times (17%) during capture
+    ARP Python Script: Malformed ARP detected for MAC 00:00:07:00:07:00
+    ARP Python Script: Throttle MAC address 00:00:07:00:07:00, Seen 304 times (27%) during capture
+    ARP Python Script: Throttle GARP for IP address 10.10.10.2, Seen 202 times (17%) during capture
