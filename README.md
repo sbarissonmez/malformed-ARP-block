@@ -5,6 +5,8 @@
 The Python script allows a Nexus 7000 system to automatically detect if malformed ARP packets (length greater than 128 bytes) are hitting the control plane.
 Upon detection via deep packet inspection, the script creates a separate ARP access-list with the offending mac addresses. The "quarantine" access-list can be policed separately, allowing control plane protection.
 
+![Diagram](./arp-spoofing-attack-diagrams.jpg)
+
 Example:
 ARP access list copp-arp-quarantine
 
