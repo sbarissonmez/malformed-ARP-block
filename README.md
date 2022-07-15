@@ -30,16 +30,18 @@ Malformed ARP detected for MAC 00:00:07:00:07:01
 Malformed ARP detected for MAC 00:00:07:00:07:02
 ```
 
-* APPLY Quarantine settings!
+**APPLY Quarantine settings!**
 
 If no malformed ARP are detected the following message is printed:
 
-* NO Malformed ARP detected!
+**NO Malformed ARP detected!**
 
 In case of excessive ARP/GARP requests the throttle logic will be applied
 
 All the actions are logged into the syslog. Example:
 
-* `ARP Python Script: Malformed ARP detected for MAC 00:00:07:00:07:00`
-* `ARP Python Script: Throttle MAC address 00:00:07:00:07:00, Seen 304 times (27%) during capture`
-* `ARP Python Script: Throttle GARP for IP address 10.10.10.2, Seen 202 times (17%) during capture`
+```
+ARP Python Script: Malformed ARP detected for MAC 00:00:07:00:07:00
+ARP Python Script: Throttle MAC address 00:00:07:00:07:00, Seen 304 times (27%) during capture
+ARP Python Script: Throttle GARP for IP address 10.10.10.2, Seen 202 times (17%) during capture
+```
