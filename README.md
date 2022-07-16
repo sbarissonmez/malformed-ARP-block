@@ -16,14 +16,14 @@ ARP access list copp-arp-quarantine
 20 permit ip any mac host 0000.0700.0701
 ```
 
-The script also checks for excessice ARP/GARP. Upon detection via deep packet inspection, the script creates a separate ARP access-list (throttle) with the offending mac addresses
+The script also checks for excessive ARP/GARP. Upon detection via deep packet inspection, the script creates a separate ARP access-list (throttle) with the offending mac addresses
 
 When the script run for the first time, it checks if there is a standard CoPP configured based on well know system profiles "dense", "lenient", "moderate", "strict".
 In case a standard CoPP is configured, a Custom profile will be configured based on the system profile originally configured
 
-After this initial check, the script starts a packet capture, 1000 ARP packets (this can be tuned)
-Once the ARP packet capture is completed, the code look for malformed ARP
-The script then put the offending MACs into the Quarantine ARP access list
+After this initial check, the script starts a packet capture, 1000 ARP packets (this can be tuned).
+Once the ARP packet capture is completed, the code look for malformed ARP.
+The script then put the offending MACs into the Quarantine ARP access list.
 
 Example:
 ```
