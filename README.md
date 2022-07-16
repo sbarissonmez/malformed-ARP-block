@@ -7,6 +7,21 @@ Upon detection via deep packet inspection, the script creates a separate ARP acc
 
 ![Diagram](./arp-spoofing-attack-diagrams.jpg)
 
+**ARP**
+ARP is an L2 protocol, used for discovering the MAC address (i.e physical address) of an IP address. This discovery is performed via an L2 broadcast, for example:
+
+    Sender/ARP Request: Hey Guys, does anyone know the MAC address for 192.168.1.100?
+    Receiver/ARP Reply: Yep that's me! My MAC address is 00:11:22:33:44:55.
+
+Once the MAC address is learned it is placed within an ARP table (cache) for future use
+
+**Gratuitous ARP (GARP)**
+A Gratuitous ARP is an ARP Response that was not prompted by an ARP Request. The Gratuitous ARP is sent as a broadcast, as a way for a node to announce or update its IP to MAC mapping to the entire network.
+
+A typical use case for GARP is around network HA and where a VIP is used. At the point the active node fails and the backup node assumes the active role, it will send a GARP to the network informing all nodes of the VIPs mac address, i.e itself. Below shows an example of the packet.
+
+![packet_capture](./garp_packet_capture.png)
+
 Example:
 ARP access list copp-arp-quarantine
 
